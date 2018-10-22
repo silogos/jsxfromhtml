@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.a`
@@ -24,7 +25,7 @@ const Username = styled.span`
   color: #fff;
 `;
 
-const TwitterLink = (props) => {
+const TwitterLink = props => {
   const { href = '' } = props;
   const parts = href.match(/twitter\.com\/(.*)\/?/);
   if (parts) {
@@ -32,7 +33,7 @@ const TwitterLink = (props) => {
     return (
       <Container href={href}>
         <Img src={`https://twitter.com/${name}/profile_image?size=mini`} />
-        <Username >{name}</Username>
+        <Username>{name}</Username>
       </Container>
     );
   } else {
@@ -43,7 +44,7 @@ const TwitterLink = (props) => {
 TwitterLink.displayName = 'TwitterLink';
 
 TwitterLink.propTypes = {
-  href: PropTypes.string,
+  href: PropTypes.string
 };
 
 export default TwitterLink;

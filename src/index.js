@@ -1,7 +1,7 @@
 // @flow
 
-import { PropTypes, PureComponent } from 'react';
-
+import { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import convert from './convert';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
   mapElements?: { [key: string]: any },
   mapInline?: string | Function,
   mapBlock?: string | Function,
-  children?: Function | null,
+  children?: Function | null
 };
 
 class JsxHtml extends PureComponent {
@@ -22,7 +22,7 @@ class JsxHtml extends PureComponent {
     mapElements: PropTypes.object,
     mapInline: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     mapBlock: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
-    children: PropTypes.func,
+    children: PropTypes.func
   };
 
   static defaultProps: Props = {
@@ -30,7 +30,7 @@ class JsxHtml extends PureComponent {
     mapElements: {},
     mapInline: '',
     mapBlock: '',
-    children: null,
+    children: null
   };
 
   state = {};
